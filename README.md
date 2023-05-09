@@ -1,9 +1,16 @@
 # voron-config-clu
 Configuration and information about my Formbot Voron 2.4R2 300✕300 printer, named CLU.
 
+My configuration is broken up into many files:
+
+* `printer.cfg` just contains the main printer info and includes all the other files.
+* `configs/*` contains (mostly) physical printer configurations, such as stepper settings.
+* `macros/*` contains (mostly) gcode macros, like `PRINT_START`.
+* It's a work in progress.
+
 ## Modifications
 
-The modifications I've made so far:
+The modifications I've made so far (way out of date):
 
 BTT PiTFT50 5" touchscreen running KlipperScreen. Mounted using [CannedBass's 45" mount](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/CannedBass/PITFT50_45_degree_mount).
 
