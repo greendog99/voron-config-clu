@@ -3,16 +3,21 @@ Configuration and information about my Formbot Voron 2.4R2 300✕300 printer, na
 
 My configuration is broken up into many files:
 
-* `printer.cfg` just contains the main printer info and includes all the other files.
-* `configs/*` contains (mostly) physical printer configurations, such as stepper settings.
-* `macros/*` contains (mostly) gcode macros, like `PRINT_START`.
-* It's a work in progress.
+* `printer.cfg` just includes all the other files from the `printer` subdirectory.
+* `printer/printer.cfg` contains the main printer info.
+* `printer/hardware/*` contains (mostly) physical printer configurations, such as stepper settings.
+* `printer/macros/*` contains (mostly) gcode macros, like `PRINT_START`.
+* It's (always) a work in progress.
 
-## Modifications
+## Major Modifications
 
-The modifications I've made so far (way out of date):
+The modifications I've made so far:
 
+[Voron Tap RC8](https://github.com/VoronDesign/Voron-Tap)
+[SB2209 CANbus toolhead board](https://github.com/bigtreetech/EBB/tree/master)
 BTT PiTFT50 5" touchscreen running KlipperScreen. Mounted using [CannedBass's 45" mount](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/CannedBass/PITFT50_45_degree_mount).
+
+## Minor Modifications
 
 [Magnetic removable panels by Le0n](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/Le0n/Magnetic_Panels_with_Magnet_Inserts).
 
@@ -20,4 +25,5 @@ BTT PiTFT50 5" touchscreen running KlipperScreen. Mounted using [CannedBass's 45
 
 [Magnetic removable hinged doors by PALM](https://www.printables.com/model/221377-voron-24-magnetic-door-hinges).
 
-[Magnetc door latches by Stephan C](https://www.printables.com/model/419658-magnet-door-latches-for-voron/comments/780939).
+[Magnetic door latches by Stephan C](https://www.printables.com/model/419658-magnet-door-latches-for-voron/comments/780939).
+
