@@ -14,7 +14,9 @@ My configuration is broken up into many files:
 The modifications I've made so far:
 
 [Voron Tap RC8](https://github.com/VoronDesign/Voron-Tap)
+
 [SB2209 CANbus toolhead board](https://github.com/bigtreetech/EBB/tree/master)
+
 BTT PiTFT50 5" touchscreen running KlipperScreen. Mounted using [CannedBass's 45" mount](https://github.com/VoronDesign/VoronUsers/tree/master/printer_mods/CannedBass/PITFT50_45_degree_mount).
 
 ## Minor Modifications
@@ -27,3 +29,4 @@ BTT PiTFT50 5" touchscreen running KlipperScreen. Mounted using [CannedBass's 45
 
 [Magnetic door latches by Stephan C](https://www.printables.com/model/419658-magnet-door-latches-for-voron/comments/780939).
 
+[Z axis dials](https://www.printables.com/model/242370-voron-24-z-axis-dials).
