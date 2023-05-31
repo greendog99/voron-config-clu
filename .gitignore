@@ -1,5 +1,6 @@
 saved_variables.cfg
 \.moonraker.conf.bkp
 printer-202*.cfg
+crowsnest.conf.202*
 adxl_results/belts/*.csv
 adxl_results/vibrations/*.tar.gz
