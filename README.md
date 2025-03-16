@@ -13,9 +13,11 @@ My configuration is broken up into many files:
 
 ## Major Modifications
 
-The modifications I've made so far:
+Main modifications:
 
-[Voron Tap R8](https://github.com/VoronDesign/Voron-Tap)
+[Cartographer Probe](https://docs.cartographer3d.com) - The best upgrade ever!
+
+[BoxTurtle AMS](https://github.com/ArmoredTurtle/BoxTurtle) - Four-color filament changer (LDO kit batch 2).
 
 [SB2209 CANbus toolhead board](https://github.com/bigtreetech/EBB/tree/master)
 and removed X/Y cable chains and endstops.
