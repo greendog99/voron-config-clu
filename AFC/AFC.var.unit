@@ -28,7 +28,7 @@
             "status": "None",
             "dist_hub": 173.0,
             "td1_data": {},
-            "endstops": "load,hub,tool_start,buffer_advance,buffer_trailing"
+            "endstops": "load,hub,tool_start,tool_end,buffer_advance,buffer_trailing"
         },
         "lane2": {
             "name": "lane2",
@@ -58,7 +58,7 @@
             "status": "None",
             "dist_hub": 110.0,
             "td1_data": {},
-            "endstops": "load,hub,tool_start,buffer_advance,buffer_trailing"
+            "endstops": "load,hub,tool_start,tool_end,buffer_advance,buffer_trailing"
         },
         "lane3": {
             "name": "lane3",
@@ -88,7 +88,7 @@
             "status": "None",
             "dist_hub": 113.0,
             "td1_data": {},
-            "endstops": "load,hub,tool_start,buffer_advance,buffer_trailing"
+            "endstops": "load,hub,tool_start,tool_end,buffer_advance,buffer_trailing"
         },
         "lane4": {
             "name": "lane4",
@@ -118,7 +118,7 @@
             "status": "None",
             "dist_hub": 175.0,
             "td1_data": {},
-            "endstops": "load,hub,tool_start,buffer_advance,buffer_trailing"
+            "endstops": "load,hub,tool_start,tool_end,buffer_advance,buffer_trailing"
         }
     },
     "system": {
