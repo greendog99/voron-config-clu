@@ -35,7 +35,8 @@ Check off an item once the fix is committed and verified on the printer.
 - [x] PAUSE uses `STATUS_LEVELING` as its LED effect. Add a dedicated "paused" effect (there's a TODO in the file).
 - [x] Remove unused macros: `FILAMENT_CHANGE`, `MESH_CONDITIONALLY`, and `PARK`/`PARK_CENTER`/`PARK_FRONT`/`PARK_REAR` (only `PARK_BED` is used).
 - [ ] Trim `stealthburner_leds.cfg` (deferred). `set_nozzle_leds_on` is used by `status_busy`/`status_cleaning`/`status_calibrating_z` and needs `_sb_vars`, `_set_sb_leds_by_name` and `_set_sb_leds`; the rest is unused.
-- [ ] `KAMP_Settings.cfg` only includes `Line_Purge.cfg`, so `mesh_margin`/`fuzz_amount` do nothing. The update_manager entry tracks KAMP's `dev` channel; switch to `main`/stable. Check that `tip_distance: 8` matches what the AFC cutter leaves behind.
+- [x] `KAMP_Settings.cfg`: commented that `mesh_margin`/`fuzz_amount` are unused (margin is `[bed_mesh] adaptive_margin`). The update_manager `channel: dev` is correct: it tracks `main`, while `stable` would roll back to the v1.1.2 tag from 2023.
+- [ ] Make the start-of-print filament tip position consistent. A new lane leaves the tip at the nozzle; the same lane leaves it 22mm back (PRINT_END retract), but `LINE_PURGE` always primes `tip_distance: 8`.
 - [x] Fix stale comments:
   - "Voron Tap" in `homing_override.cfg:65`
   - "park nozzle at front" (actually rear) in `printing.cfg:116`
