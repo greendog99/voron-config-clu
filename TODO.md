@@ -46,6 +46,6 @@ Check off an item once the fix is committed and verified on the printer.
 - [x] **`AFC/AFC.var.unit` is runtime state tracked in git** and changes after every print. Untrack it (`git rm --cached`) and add `AFC/AFC.var*` to `.gitignore`.
 - [x] `[force_move]` is defined in both `clu.cfg` and `AFC/AFC_Hardware.cfg`; `[pause_resume]`, `[display_status]` and `[respond]` are also defined in mainsail.cfg. Drop the duplicates.
 - [ ] Re-enable the exhaust fan on FAN4 if one is installed (`hardware/fans.cfg`).
-- [ ] Remove the commented-out `update_manager` blocks for `pgcode` and the old `cartographer` from `moonraker.conf`.
+- [x] Remove the commented-out `update_manager` blocks for `pgcode` and the old `cartographer` from `moonraker.conf`.
 - [ ] **README.md is stale**: it describes a `printer/` subdirectory that doesn't exist and lists the SB2209 instead of the Nitehawk-36 + Jabberwocky.
 - [ ] The Klipper checkout is "dirty" only because of extension files symlinked into `klippy/extras` (normal for led_effect/voron-klipper-extensions). Nothing to fix; noting it so it isn't chased again.
