@@ -6,6 +6,7 @@ Check off an item once the fix is committed and verified on the printer.
 ## 🔴 Bugs: things that break or could crash
 
 - [x] **`G28 X` / `G28 Y` leaves the printer in relative mode (G91).** `_HOME_X` and `_HOME_Y` switch to G91 and never switch back. Only the Z branch sets G90 again (`macros/homing_override.cfg:37-75`). Wrap the homing_override body in `SAVE_GCODE_STATE` / `RESTORE_GCODE_STATE`.
+- [x] **Homing one axis marks every axis as homed.** `SET_KINEMATIC_POSITION` defaults to `SET_HOMED=xyz`, so after `G28 X` the toolhead reports `xyz` and `_CG28` skips homing. When Z is already homed, it also overwrites the real Z position with 1 (`macros/homing_override.cfg`).
 - [ ] **RESUME after M600 calls `CLEAN_NOZZLE`, which doesn't exist** (`macros/M600_pause_resume_cancel.cfg:69`). That macro is in `clean_nozzle.cfg-disabled`. Replace the call with `AFC_BRUSH`.
 - [ ] **`SHUTDOWN` calls `BACKUP_CONFIG`, which doesn't exist** (`macros/misc_controls.cfg:10`). It shows up 6× in klippy.log as an unknown command. Either define it with `[gcode_shell_command]`, since that extension is installed, or remove the call.
 - [ ] **M701/M702 call `LOAD_FILAMENT` / `UNLOAD_FILAMENT`, which don't exist** (`macros/marlin_compatibility.cfg`). Map them to AFC commands (e.g. `TOOL_UNLOAD`) or delete them.
