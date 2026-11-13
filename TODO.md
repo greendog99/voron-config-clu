@@ -35,7 +35,7 @@ Check off an item once the fix is committed and verified on the printer.
 - [ ] PAUSE uses `STATUS_LEVELING` as its LED effect. Add a dedicated "paused" effect (there's a TODO in the file).
 - [ ] Remove unused macros: `FILAMENT_CHANGE`, `PARK_CENTER`, `MESH_CONDITIONALLY` (if not adopted above), and most of `stealthburner_leds.cfg` (only `set_nozzle_leds_on` is used).
 - [ ] `KAMP_Settings.cfg` only includes `Line_Purge.cfg`, so `mesh_margin`/`fuzz_amount` do nothing. The update_manager entry tracks KAMP's `dev` channel; switch to `main`/stable. Check that `tip_distance: 8` matches what the AFC cutter leaves behind.
-- [ ] Fix stale comments:
+- [x] Fix stale comments:
   - "Voron Tap" in `homing_override.cfg:65`
   - "park nozzle at front" (actually rear) in `printing.cfg:116`
   - "2 hours" (actually 1h) in `M600_pause_resume_cancel.cfg:42`
