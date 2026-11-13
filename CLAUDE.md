@@ -8,6 +8,7 @@ The printer is named **CLU**.
 - Toolhead: Jabberwocky on an **LDO Nitehawk-36** toolboard over USB (`[mcu nhk]`). Extruder, hotend, fans, toolhead LEDs and ADXL are in `hardware/nitehawk-36.cfg`.
 - Probe: **Cartographer V3** over USB (`[mcu cartographer]`). Uses the `cartographer3d-plugin` Python package in `~/klippy-env`, not the old cartographer-klipper repo. Z homing uses `probe:z_virtual_endstop`, and the final Z is set with `CARTOGRAPHER_TOUCH_HOME` in `SETUP_PRINTER`.
 - Filament changer: **BoxTurtle** with AFC-Lite board (`[mcu Turtle_1]`), 4 lanes. AFC software is in `~/AFC-Klipper-Add-On` (symlinked into `~/klipper/klippy/extras/AFC*.py`). Toolhead filament sensors are `nhk:gpio3` (tool_start) and `nhk:gpio13` (tool_end).
+- Nozzle brush: mounted on the **gantry**, so it moves in Z with the nozzle. `AFC_BRUSH` works at any Z, which is why `brush_loc` Z is `-1`.
 - Pi: Raspberry Pi with a BTT PiTFT50 running KlipperScreen. Webcams run on crowsnest.
 
 ## File layout
@@ -29,6 +30,7 @@ The printer is named **CLU**.
 
 ## Slicer interface
 
+Slicing is done in **OrcaSlicer**, which uploads and starts jobs on the printer through Moonraker. Start/end gcode and per-filament settings live in Orca profiles, not in this repo, so ask before assuming what the slicer sends.
 The slicer calls `PRINT_START BED=<temp> EXTRUDER=<temp> TOOL=<initial tool> [MESH=YES]`, and ends with `PRINT_END`.
 Tool changes are `T0`–`T3`, handled by AFC.
 
