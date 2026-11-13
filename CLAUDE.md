@@ -31,7 +31,7 @@ The printer is named **CLU**.
 ## Slicer interface
 
 Slicing is done in **OrcaSlicer**, which uploads and starts jobs on the printer through Moonraker. Start/end gcode and per-filament settings live in Orca profiles, not in this repo, so ask before assuming what the slicer sends.
-The slicer calls `PRINT_START BED=<temp> EXTRUDER=<temp> TOOL=<initial tool> [MESH=YES]`, and ends with `PRINT_END`.
+The slicer calls `PRINT_START BED=<temp> EXTRUDER=<temp> TOOL=<initial tool>`, and ends with `PRINT_END`. `SETUP_PRINTER` always runs an adaptive mesh (`MESH=` is ignored if sent). Adaptive meshing needs OrcaSlicer's "Label objects" setting on; without it the mesh covers the full bed.
 Tool changes are `T0`–`T3`, handled by AFC.
 
 ## Workflow rules
