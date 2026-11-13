@@ -29,7 +29,7 @@ Check off an item once the fix is committed and verified on the printer.
 ## 🟡 Cleanup / consistency
 
 - [ ] **Three layers of PAUSE/RESUME/CANCEL_PRINT.** mainsail.cfg defines them, `M600_pause_resume_cancel.cfg` overrides them, and AFC then renames RESUME/PAUSE to wrap them. Because of this, `mainsail_overrides.cfg` (`_CLIENT_VARIABLE`) mostly does nothing. Pick one approach: either use Mainsail's macros plus `_CLIENT_VARIABLE`, or keep the custom ones and drop the override file. AFC already does its own Z hop (`z_hop: 5`) on top of PAUSE's 10mm.
-- [ ] **`[respond] default_type: error`** (`clu.cfg:27`) makes every `RESPOND`/`M117` echo show up as an error (`!!`) in the console. Change it to `echo` unless the error styling is intentional.
+- [x] **`[respond] default_type: error`** (`clu.cfg:27`) makes every `RESPOND`/`M117` echo show up as an error (`!!`) in the console. Change it to `echo` unless the error styling is intentional.
 - [ ] **Stale `[probe] z_offset = 0` in the SAVE_CONFIG block** (left over from Tap). Remove it in a SAVE_CONFIG session, or confirm the Cartographer plugin needs it.
 - [ ] **LED effects use the wrong indices**: `logo_leveling` uses (2,3) and `nozzle_leveling` uses (1), which is swapped (`macros/led_effects.cfg:145,152`). `nozzle_meshing` uses (1) instead of (2,3) (`:222`). Also check whether the Jabberwocky still has an SB-style 3-LED chain (`[neopixel sb_leds]`).
 - [ ] PAUSE uses `STATUS_LEVELING` as its LED effect. Add a dedicated "paused" effect (there's a TODO in the file).
