@@ -4,3 +4,4 @@ printer-202*.cfg
 crowsnest.conf.202*
 adxl_results/belts/*.csv
 adxl_results/vibrations/*.tar.gz
+AFC/AFC.var*
