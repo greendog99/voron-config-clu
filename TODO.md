@@ -41,7 +41,7 @@ Check off an item once the fix is committed and verified on the printer.
   - "2 hours" (actually 1h) in `M600_pause_resume_cancel.cfg:42`
   - "FAN4" (actually FAN3) in `hardware/fans.cfg`
 - [x] Delete `hardware-disabled/` (old SB2209/Tap/Stealthburner config; it's in git history) and `clean_nozzle.cfg-disabled`.
-- [ ] Delete `spyglass.conf`, since crowsnest is the webcam service actually running.
+- [x] Delete `spyglass.conf`, since crowsnest is the webcam service actually running.
 - [ ] Prune the old `printer-2026*.cfg` SAVE_CONFIG backups (10 files; they're gitignored).
 - [x] **`AFC/AFC.var.unit` is runtime state tracked in git** and changes after every print. Untrack it (`git rm --cached`) and add `AFC/AFC.var*` to `.gitignore`.
 - [x] `[force_move]` is defined in both `clu.cfg` and `AFC/AFC_Hardware.cfg`; `[pause_resume]`, `[display_status]` and `[respond]` are also defined in mainsail.cfg. Drop the duplicates.
