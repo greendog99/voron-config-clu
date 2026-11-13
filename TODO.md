@@ -37,6 +37,9 @@ Check off an item once the fix is committed and verified on the printer.
 - [ ] Trim `stealthburner_leds.cfg` (deferred). `set_nozzle_leds_on` is used by `status_busy`/`status_cleaning`/`status_calibrating_z` and needs `_sb_vars`, `_set_sb_leds_by_name` and `_set_sb_leds`; the rest is unused.
 - [x] `KAMP_Settings.cfg`: commented that `mesh_margin`/`fuzz_amount` are unused (margin is `[bed_mesh] adaptive_margin`). The update_manager `channel: dev` is correct: it tracks `main`, while `stable` would roll back to the v1.1.2 tag from 2023.
 - [ ] Make the start-of-print filament tip position consistent. A new lane leaves the tip at the nozzle; the same lane leaves it 22mm back (PRINT_END retract), but `LINE_PURGE` always primes `tip_distance: 8`.
+  - **Plan (agreed 2026-11-13, do 2026-11-14), option A:** in `PRINT_END` (`macros/printing.cfg`) keep the `E-2` retract before the wipe move and drop the `E-20` "out of hot zone" retract (AFC cuts before every unload, so tip shape doesn't matter). Set `variable_tip_distance: 2` in `macros/KAMP_Settings.cfg`.
+  - **Test:** two real prints, one starting on the already-loaded lane and one on a different lane (AFC logs "already loaded" for the first). User checks the purge line start both times: no blob, no thin/missing start.
+  - Rejected option B (TOOL_UNLOAD in PRINT_END, `tip_distance: 0`): wastes a ~61mm poop and adds time on every print.
 - [x] Fix stale comments:
   - "Voron Tap" in `homing_override.cfg:65`
   - "park nozzle at front" (actually rear) in `printing.cfg:116`
