@@ -40,7 +40,8 @@ Tool changes are `T0`–`T3`, handled by AFC.
   `curl -s localhost:7125/printer/info | jq .result.state`
   If it isn't, read the tail of `~/printer_data/logs/klippy.log`.
 - **Git: one small commit per fix on `main`**, made after the user confirms the change works on the printer.
-- Run gcode for testing through `curl -s -X POST localhost:7125/printer/gcode/script -d 'script=...'`, but only for harmless queries (e.g. `QUERY_ENDSTOPS`, `GET_POSITION`). Ask before anything that moves or heats the printer.
+- Run gcode for testing through `curl -s -X POST localhost:7125/printer/gcode/script --data-urlencode 'script=...'`, then read the result with `/printer/objects/query?...`.
+- **Test moves are allowed without asking when the printer is idle** (`print_stats.state` is `standby`, `complete` or `cancelled`), e.g. homing, QGL, jogging, and running brush/park macros. Check the state immediately before each test run. Still ask before heating, extruding, or loading/unloading filament.
 - Before editing a macro, grep for its callers across `macros/`, `AFC/` and `~/mainsail-config/mainsail.cfg`. PAUSE, RESUME and CANCEL_PRINT are defined in mainsail.cfg, overridden in `macros/M600_pause_resume_cancel.cfg`, and AFC wraps them at runtime (`_AFC_RENAMED_RESUME_`).
 
 ## Useful paths
