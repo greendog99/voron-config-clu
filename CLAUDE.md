@@ -19,7 +19,7 @@ The printer is named **CLU**.
 - `macros/`: gcode macros. `printing.cfg` has `PRINT_START` → `SETUP_PRINTER` and `PRINT_END`. `homing_override.cfg` has the sensorless homing.
 - `AFC/`: BoxTurtle config. `AFC_Macro_Vars.cfg` holds the positions for the cut/brush/poop/kick/park macros. `AFC/macros/*.cfg` are upstream AFC macros: don't edit them, they get replaced on AFC updates.
 - `AFC/AFC.var.*`: AFC runtime state written by the software. Don't hand-edit.
-- `hardware-disabled/`, `*.cfg-disabled`: old configs that aren't loaded.
+- `*.cfg-disabled`: old configs that aren't loaded (older ones are in git history).
 - `printer-YYYYMMDD_HHMMSS.cfg`: automatic SAVE_CONFIG backups (gitignored).
 - `TODO.md`: the running list of fixes and improvements. Keep it updated as items get done.
 
