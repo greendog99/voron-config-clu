@@ -6,7 +6,7 @@ The printer is named **CLU**.
 - Printer: Voron 2.4R2 300mm (Formbot kit). CoreXY, sensorless X/Y homing.
 - Mainboard: BTT Octopus 1.1. It currently runs as a USB-CAN bridge (`[mcu] canbus_uuid` in `clu.cfg`), and a reflash to plain USB is planned.
 - Toolhead: Jabberwocky on an **LDO Nitehawk-36** toolboard over USB (`[mcu nhk]`). Extruder, hotend, fans, toolhead LEDs and ADXL are in `hardware/nitehawk-36.cfg`.
-- Probe: **Cartographer V3** over USB (`[mcu cartographer]`). Uses the `cartographer3d-plugin` Python package in `~/klippy-env`, not the old cartographer-klipper repo. Z homing uses `probe:z_virtual_endstop`, and the final Z is set with `CARTOGRAPHER_TOUCH_HOME` in `SETUP_PRINTER`.
+- Probe: **Cartographer V3** over USB (`[mcu cartographer]`). Uses the `cartographer3d-plugin` Python package in `~/klippy-env`, not the old cartographer-klipper repo (removed Nov 2026). Z homing uses `probe:z_virtual_endstop`, and the final Z is set with `CARTOGRAPHER_TOUCH_HOME` in `SETUP_PRINTER`.
 - Filament changer: **BoxTurtle** with AFC-Lite board (`[mcu Turtle_1]`), 4 lanes. AFC software is in `~/AFC-Klipper-Add-On` (symlinked into `~/klipper/klippy/extras/AFC*.py`). Toolhead filament sensors are `nhk:gpio3` (tool_start) and `nhk:gpio13` (tool_end).
 - Nozzle brush: mounted on the **gantry**, so it moves in Z with the nozzle. `AFC_BRUSH` works at any Z, which is why `brush_loc` Z is `-1`.
 - Pi: Raspberry Pi with a BTT PiTFT50 running KlipperScreen. Webcams run on crowsnest.
@@ -19,7 +19,6 @@ The printer is named **CLU**.
 - `macros/`: gcode macros. `printing.cfg` has `PRINT_START` → `SETUP_PRINTER` and `PRINT_END`. `homing_override.cfg` has the sensorless homing.
 - `AFC/`: BoxTurtle config. `AFC_Macro_Vars.cfg` holds the positions for the cut/brush/poop/kick/park macros. `AFC/macros/*.cfg` are upstream AFC macros: don't edit them, they get replaced on AFC updates.
 - `AFC/AFC.var.*`: AFC runtime state written by the software. Don't hand-edit.
-- `*.cfg-disabled`: old configs that aren't loaded (older ones are in git history).
 - `printer-YYYYMMDD_HHMMSS.cfg`: automatic SAVE_CONFIG backups (gitignored).
 - `TODO.md`: the running list of fixes and improvements. Keep it updated as items get done.
 
